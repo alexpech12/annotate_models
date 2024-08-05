@@ -2932,8 +2932,8 @@ describe AnnotateModels do
                                mock_column(:foreign_thing_id, :integer)
                              ],
                              [
-                              mock_index('index_rails_02e851e3b7', columns: ['id']),
-                              mock_index('index_rails_02e851e3b8', columns: ['foreign_thing_id'])
+                               mock_index('index_rails_02e851e3b7', columns: ['id']),
+                               mock_index('index_rails_02e851e3b8', columns: ['foreign_thing_id'])
                              ])
           @schema_info = AnnotateModels.get_schema_info(klass, '== Schema Info', show_indexes: true)
           annotate_one_file
@@ -2948,12 +2948,11 @@ describe AnnotateModels do
                                mock_column(:another_column, :integer)
                              ],
                              [
-                              mock_index('index_rails_02e851e3b7', columns: ['id']),
-                              mock_index('index_rails_02e851e3b8', columns: ['foreign_thing_id']),
-                              mock_index('index_rails_02e851e3b9',
-                                columns: ['another_column'],
-                                where: "another_column IS NOT NULL"
-                              )
+                               mock_index('index_rails_02e851e3b7', columns: ['id']),
+                               mock_index('index_rails_02e851e3b8', columns: ['foreign_thing_id']),
+                               mock_index('index_rails_02e851e3b9',
+                                          columns: ['another_column'],
+                                          where: "another_column IS NOT NULL")
                              ])
           @schema_info = AnnotateModels.get_schema_info(klass, '== Schema Info', show_indexes: true)
           annotate_one_file
@@ -2969,12 +2968,11 @@ describe AnnotateModels do
                                mock_column(:another_column, :text)
                              ],
                              [
-                              mock_index('index_rails_02e851e3b7', columns: ['id']),
-                              mock_index('index_rails_02e851e3b8', columns: ['foreign_thing_id']),
-                              mock_index('index_rails_02e851e3b9',
-                                columns: ['another_column'],
-                                where: "another_column LIKE '\\\\%'"
-                              )
+                               mock_index('index_rails_02e851e3b7', columns: ['id']),
+                               mock_index('index_rails_02e851e3b8', columns: ['foreign_thing_id']),
+                               mock_index('index_rails_02e851e3b9',
+                                          columns: ['another_column'],
+                                          where: "another_column LIKE '\\\\%'")
                              ])
           @schema_info = AnnotateModels.get_schema_info(klass, '== Schema Info', show_indexes: true)
           annotate_one_file
